@@ -5,9 +5,9 @@
 
 // 1) display student information
 document.writeln("-----1) Student Information -----");
-let studentName = "varad sonad";
+let studentName = "shishir";
 let studentAge = 21;
-let studentEmail = "varad@example.com";
+let studentEmail = "shishir@example.com";
 let studentMarks = 85;
 
 document.writeln("<br>Student Information:");
