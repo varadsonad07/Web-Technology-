@@ -1,30 +1,31 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { StudentService } from '../app/student.service';
 
 @Component({
   standalone: true,
   selector: 'app-addstudent',
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './addstudent.html',
   styleUrl: './addstudent.css',
 })
 export class Addstudent {
   name = '';
-  age = '';
+  age: number | null = null;
 
   constructor(private readonly studentService: StudentService) {}
 
-  addStudent(nameInput: HTMLInputElement, ageInput: HTMLInputElement): void {
-    const name = nameInput.value.trim();
-    const age = Number(ageInput.value);
+  addStudent(): void {
+    const name = this.name.trim();
+    const age = this.age ?? 0;
 
-    if (!name || !age) {
+    if (!name || age <= 0) {
       return;
     }
 
     this.studentService.add({ name, age });
-    nameInput.value = '';
-    ageInput.value = '';
-    nameInput.focus();
+    this.name = '';
+    this.age = null;
   }
 }

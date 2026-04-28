@@ -1,13 +1,13 @@
 <div class="card">
   <h2>Add Student</h2>
-  <form (submit)="addStudent(nameInput, ageInput); $event.preventDefault()">
+  <form (submit)="addStudent(); $event.preventDefault()">
     <label>
       Name
-      <input #nameInput type="text" placeholder="Enter name" required />
+      <input [(ngModel)]="name" name="name" type="text" placeholder="Enter name" required />
     </label>
     <label>
       Age
-      <input #ageInput type="number" min="1" placeholder="Enter age" required />
+      <input [(ngModel)]="age" name="age" type="number" min="1" placeholder="Enter age" required />
     </label>
     <button type="submit">Add to List</button>
   </form>

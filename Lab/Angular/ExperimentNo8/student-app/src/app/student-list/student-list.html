@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>Student Management System</h2>
+
+  <div class="add-student-form">
+    <h3>Add New Student</h3>
+    <input 
+      type="text" 
+      [(ngModel)]="newStudent.name" 
+      placeholder="Enter Student Name" 
+    />
+    <input 
+      type="text" 
+      [(ngModel)]="newStudent.course" 
+      placeholder="Enter Course" 
+    />
+    
+    <button 
+      (click)="addStudent()" 
+      [disabled]="!newStudent.name || !newStudent.course">
+      Add Student
+    </button>
+  </div>
+
+  <hr>
+
+  <h3>Enrolled Students</h3>
+  <ul *ngIf="students.length > 0; else noStudents">
+    <li *ngFor="let student of students">
+      <strong>{{ student.id }} - {{ student.name }}</strong> 
+      <span>(Course: {{ student.course }})</span>
+      
+      <button class="delete-btn" (click)="deleteStudent(student.id)">Remove</button>
+    </li>
+  </ul>
+
+  <ng-template #noStudents>
+    <p>No students currently enrolled.</p>
+  </ng-template>
+</div>
