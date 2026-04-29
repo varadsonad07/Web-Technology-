@@ -1,0 +1,139 @@
+body {
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    margin: 0;
+    padding: 0;
+
+}
+
+.container {
+
+    width: 450px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+
+}
+
+h2 {
+
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+
+}
+
+#chatBox {
+
+    height: 320px;
+    border: none;
+    overflow-y: auto;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #f7f9fc;
+    border-radius: 15px;
+    box-shadow: inset 0px 2px 5px rgba(0,0,0,0.1);
+
+}
+
+/* Message Style */
+
+#chatBox p {
+
+    background: #4facfe;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin: 8px 0;
+    width: fit-content;
+    max-width: 80%;
+    animation: fadeIn 0.3s ease;
+
+}
+
+/* Input Area */
+
+.input-area {
+
+    display: flex;
+    gap: 10px;
+
+}
+
+input {
+
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #4facfe;
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+
+}
+
+input:focus {
+
+    border-color: #00c6ff;
+    box-shadow: 0px 0px 8px rgba(0,198,255,0.5);
+
+}
+
+/* Button Style */
+
+button {
+
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(to right, #4facfe, #00c6ff);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+button:hover {
+
+    transform: scale(1.05);
+    background: linear-gradient(to right, #00c6ff, #4facfe);
+
+}
+
+/* Scrollbar */
+
+#chatBox::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+#chatBox::-webkit-scrollbar-thumb {
+
+    background: #4facfe;
+    border-radius: 10px;
+
+}
+
+/* Animation */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+        transform: translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+}

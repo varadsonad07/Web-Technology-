@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Experiment E03 - Form Validation</title>
+    <title>Experiment - Student Marks Manager</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
 
-        <h2>Student Registration Form</h2>
+        <h2>Student Marks Manager</h2>
 
-        <form id="myForm">
+        <label>Student Name:</label><br>
+        <input type="text" id="name"><br>
 
-            <label>Name:</label><br>
-            <input type="text" id="name"><br>
+        <label>Marks:</label><br>
+        <input type="number" id="marks"><br><br>
 
-            <label>Email:</label><br>
-            <input type="text" id="email"><br>
+        <button onclick="addStudent()">Add Student</button>
+        <button onclick="showTopStudents()">Top Students</button>
 
-            <label>Password:</label><br>
-            <input type="password" id="password"><br><br>
-
-            <button type="submit">Register</button>
-
-        </form>
+        <h3>Student List</h3>
+        <ul id="studentList"></ul>
 
         <p id="message"></p>
 

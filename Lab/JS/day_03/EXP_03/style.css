@@ -4,33 +4,27 @@ body {
 }
 
 .container {
-    background: white;
-    width: 300px;
+    width: 350px;
+    margin: auto;
+    margin-top: 50px;
     padding: 20px;
-    margin: 100px auto;
+    background: white;
     border-radius: 10px;
-    box-shadow: 0 0 10px gray;
+    text-align: center;
 }
 
 input {
-    width: 100%;
+    width: 90%;
     padding: 8px;
-    margin: 5px 0;
+    margin: 5px;
 }
 
 button {
-    width: 100%;
     padding: 10px;
-    background-color: green;
-    color: white;
-    border: none;
+    margin: 5px;
+    cursor: pointer;
 }
 
-button:hover {
-    background-color: darkgreen;
-}
-
-#message {
-    margin-top: 10px;
-    font-weight: bold;
+li {
+    text-align: left;
 }

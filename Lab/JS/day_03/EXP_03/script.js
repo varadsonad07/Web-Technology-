@@ -1,32 +1,70 @@
-document.getElementById("myForm").addEventListener("submit", function(event)
-{
-    event.preventDefault();
+// Array to store students
+let students = [];
 
-    // get values
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    var message = document.getElementById("message");
+// Arrow Function to add student
+const addStudent = () => {
 
-    // validation
-    if(name === "" || email === "" || password === "")
-    {
-        message.innerHTML = "All fields are required!";
-        message.style.color = "red";
+    let name = document.getElementById("name").value;
+    let marks = Number(document.getElementById("marks").value);
+
+    // Control Statement
+    if (name === "" || marks === 0) {
+        document.getElementById("message").innerHTML =
+            "Please enter valid details!";
         return;
     }
 
-    if(password.length < 6)
-    {
-        message.innerHTML = "Password must be at least 6 characters!";
-        message.style.color = "red";
-        return;
+    // Object creation
+    let student = {
+        name: name,
+        marks: marks
+    };
+
+    // Array Method -> push()
+    students.push(student);
+
+    document.getElementById("message").innerHTML =
+        "Student Added Successfully!";
+
+    displayStudents();
+};
+
+// Normal Function
+function displayStudents() {
+
+    let list = document.getElementById("studentList");
+    list.innerHTML = "";
+
+    // Loop
+    for (let i = 0; i < students.length; i++) {
+
+        let li = document.createElement("li");
+
+        li.innerHTML =
+            students[i].name + " - " + students[i].marks;
+
+        list.appendChild(li);
+    }
+}
+
+// Arrow Function with filter()
+const showTopStudents = () => {
+
+    // Array Method -> filter()
+    let topStudents = students.filter(student => student.marks >= 75);
+
+    let result = "";
+
+    // Loop
+    topStudents.forEach(student => {
+        result += student.name + " ";
+    });
+
+    // Control Statement
+    if (result === "") {
+        result = "No Top Students";
     }
 
-    // DOM manipulation
-    message.innerHTML = "Registration Successful!";
-    message.style.color = "green";
-
-    // change background color using DOM
-    document.body.style.backgroundColor = "#d4edda";
-});
+    document.getElementById("message").innerHTML =
+        "Top Students: " + result;
+};
